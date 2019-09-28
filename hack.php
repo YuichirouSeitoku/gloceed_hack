@@ -1,25 +1,30 @@
 <?php
 $data = file_get_contents('php://input');
-$data = json_decode($data);
-htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
-print_r($data);
-print "aaa";
-if(false){
-    $noodle = $data['noodle'];
-    $taste = $data[''];
-    $thickness = $data['thickness'];
+$data = json_decode($data, true);
+error_log(print_r($data,true),"3","./error.log");
+$data = array(
+    [soup] => 'miso',
+);
+
+if($data['soup'] == 'miso'){
     include 'aaa.html';
 }else{
     include 'main.html';
-    print_r($data);
+    echo "<pre>";
+    var_dump($data["soup"]);
+    echo "</pre>";
 }
 
+if($data["soup"] == 'shouyu'){;}
 
+/*
 function validate_form() {
     $input = array();
     $input['name'] = $_POST['id'];
-    echo $input['name'];
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
 
 }
-
+*/
 ?>
