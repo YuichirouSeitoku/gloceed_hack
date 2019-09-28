@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="mobile_out">
+      <div class=mobile_camera">
+      </div>
+      <div class="mobile_dotto">
+      </div>
+      <div class="mobile_maiku">
+      </div>
+      <div class="mobile_in">
+    <div id="soup">
+      <p>select kind of ramen</p>
+      <input type="radio" id="tonkotu" onclick="changeSoup(value)" value="tonkotu" name="A">
+      poke
+      <input type="radio" id="miso" onclick="changeSoup(value)" value="miso" name="A">
+      miso
+      <input type="radio" id="shoyu" onclick="changeSoup(value)" value="shoyu" name="A">
+      shoyu
+      <input type="radio" id="sio" onclick="changeSoup(value)" value="solt" name="A">
+      solt
+    </div>
+    <div id="noodle">
+      <p>select kind of noodle</p>
+      <input type="radio" id="hosomen" onclick="changeNoodle(value)" value="hosomen" name="B">
+      hosomen
+      <input type="radio" id="hutomen" onclick="changeNoodle(value)" value="hutomen" name="B">
+      hutomen
+      <input type="radio" id="hiramen" onclick="changeNoodle(value)" value="hiramen" name="B">
+      hiramen
+    </div>
+    <div id="thickness">
+      <p>select thickness</p>
+      <input type="radio" id="assari" onclick="changeThickness(value)" value="thin" name="C">
+      thin
+      <input type="radio" id="kotteri" onclick="changeThickness(value)" value="thick" name="C">
+      thick
+    </div>
+    </div>
+    </div>
+    <input type="button" value="検索" onclick="sentData()">
+    <script type="text/javascript">
+      var soup,noodle,thickness;
+      function changeSoup(value){
+        soup=value;
+        console.log(value);
+      }
+      function changeNoodle(value){
+        noodle=value;
+        console.log(value);
+      }
+      function changeThickness(value){
+        thickness=value;
+        console.log(value);
+      }
+
+      function sentData(){
+        var data={
+          "soup":soup,
+          "noodle":noodle,
+          "thickness":thickness
+        }
+        console.log(data);
+        $.ajax({
+          type: "post",
+          url: testUrl,
+          contentType:'application/json',
+          dataType: 'json',
+          data: JSON.stringify(data),
+          timeout: 3000,
+          success: function(){
+            console.log("dekta");
+          }
+        });
+      }
+
+
+    </script>
+
+  </body>
+</html>
