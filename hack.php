@@ -23,8 +23,6 @@ try{
     exit();
 }
 
-
-
 //データを送信されたかどうか
 if('POST' == $_SERVER['REQUEST_METHOD']){
     list($errors, $input) = validate_form();
