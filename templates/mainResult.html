@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../static/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">RamenCraft</h1>
+                <h2 class="subtitle"></h2>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="columns">
+
+            <div class="column is-4 box has-background-grey-lighter">
+                <div id="soup" class="box">
+                    <p class="has-text-weight-light title is-3"> select kind of ramen</p>
+                    <input type="radio" id="tonkotu" onclick="changeSoup(value)" value="pork" name="A">
+                    pork
+                    <input type="radio" id="miso" onclick="changeSoup(value)" value="miso" name="A">
+                    miso
+                    <input type="radio" id="shoyu" onclick="changeSoup(value)" value="shoyu" name="A">
+                    shoyu
+                    <input type="radio" id="sio" onclick="changeSoup(value)" value="salt" name="A">
+                    salt
+                </div>
+                <div id="noodle" class="box">
+                    <p class="has-text-weight-light title is-3">select kind of noodle</p>
+                    <input type="radio" id="hosomen" onclick="changeNoodle(value)" value="thin noodles" name="B">
+                    thin noodles
+                    <input type="radio" id="hutomen" onclick="changeNoodle(value)" value="thick noodles" name="B">
+                    thick noodles
+                    <input type="radio" id="hiramen" onclick="changeNoodle(value)" value="flat noodles" name="B">
+                    flat noodles
+                </div>
+                <div id="thickness" class="box">
+                    <p class="has-text-weight-light title is-3">select thickness</p>
+                    <input type="radio" id="assari" onclick="changeThickness(value)" value="weak soup" name="C">
+                    weak soup
+                    <input type="radio" id="kotteri" onclick="changeThickness(value)" value="strong soup" name="C">
+                    strong soup
+                </div>
+                <input type="button" class="button" value="検索" onclick="sentData()">
+            </div>
+            <div class="column is-8">
+
+                <div class="box">
+                    <div>
+                        <img height="200px" width="200px" src="./raamen.jpg">
+                    </div>
+                    <div class="box">
+                        <div>
+                            <p>らあめん</p>
+                        </div>
+                        <div>
+                            <p>testtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
